@@ -51,7 +51,53 @@ int lengthOfLongestSubstring(string s) {
 	return result;
 }
 
-int main()
+//438. Find All Anagrams in a String
+vector<int> findAnagrams(string s, string p) {
+	vector<int> result;
+	if (p.size() > s.size()) {
+		return result;
+	}
+	if (p == s){
+		result.push_back(0);
+		return result;
+	}
+
+	int fren[256] = { 0 };
+	for (int i = 0; i < p.size(); i++) {
+		fren[p[i]]++;
+	}
+	
+	int l = 0;
+	int r = -1;
+	while (l < s.size()) {
+		if (r + 1 < s.size() && fren[s[r+1]] >= 1) {
+			fren[s[++r]]--;
+		}
+		else
+			fren[s[l++]]++;
+		
+		if (r - l + 1 == p.size())
+			result.push_back(l);
+	}
+
+	return result;
+}
+
+//76. Minimum Window Substring
+string minWindow(string s, string t) {
+	string result = "";
+	if (t.size() > t.size())
+		return result;
+	if (s == t)
+		return s;
+
+	//Too Hard For Me...
+	//See https://leetcode.com/problems/minimum-window-substring/discuss/26808/Here-is-a-10-line-template-that-can-solve-most-'substring'-problems
+	//for solution
+}
+
+
+/*int main()
 {
 	int a[] = { 2,3,1,2,4,3 };
 	vector<int> v(a, a + sizeof(a) / sizeof(int));
@@ -61,4 +107,4 @@ int main()
 
 	system("pause");
 	return 0;
-}
+}*/

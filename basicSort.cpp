@@ -38,7 +38,7 @@ void insertionSort(int arr[], int n) {
 }
 
 
-int main()
+/*int main()
 {
 	int a1[] = { 1,2,4,5,3 };
 	int a2[] = { 3 };
@@ -50,4 +50,4 @@ int main()
 	}
 	system("pause");
 	return 0;
-}
+}*/

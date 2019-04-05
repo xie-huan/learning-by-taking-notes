@@ -82,6 +82,9 @@ bool isVowel(char c) {
 	if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
 		return true;
 	}
+	if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+		return true;
+	}
 	return false;
 }
 string reverseVowels(string s) {
@@ -97,6 +100,8 @@ string reverseVowels(string s) {
 
 	while (l < r) {
 		swap(s[record[l]], s[record[r]]);
+		l++;
+		r--;
 	}
 	return s;
 }
@@ -141,7 +146,6 @@ int maxArea(vector<int>& height) {
 					maxAreaResult = tempMaxArea;
 			}
 		}
-
 		l++;
 		r--;
 	}
@@ -181,7 +185,7 @@ string convertToTitle(int n) {
 	}
 	return result;
 }
-int main()
+/*int main()
 {
 	int a[] = { 2,3,10,5,7,8,9 };
 	//int a[] = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
@@ -190,4 +194,4 @@ int main()
 	cout << c << endl;
 	system("pause");
 	return 0;
-}
+}*/
